@@ -1,13 +1,28 @@
 package com.iostyle.wtfdaggerandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.iostyle.wtfdaggerandroid.presenter.PresenterMainActivity;
+import com.iostyle.wtfdaggerandroid.view.ViewMainActivity;
+
+import javax.inject.Inject;
+
+import dagger.android.support.DaggerAppCompatActivity;
+
+public class MainActivity extends DaggerAppCompatActivity implements ViewMainActivity {
+    @Inject
+    PresenterMainActivity mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mPresenter.test();
+    }
+
+    @Override
+    public void test() {
+        Toast.makeText(this, "TEST", Toast.LENGTH_SHORT).show();
     }
 }
