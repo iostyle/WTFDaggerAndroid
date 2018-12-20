@@ -19,6 +19,7 @@ public class MainActivity extends DaggerAppCompatActivity implements ViewMainAct
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mPresenter.test();
+        getSupportFragmentManager().beginTransaction().replace(R.id.lay, new MainFragment()).commit();
     }
 
     @Override

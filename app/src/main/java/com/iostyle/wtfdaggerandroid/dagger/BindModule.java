@@ -1,6 +1,7 @@
 package com.iostyle.wtfdaggerandroid.dagger;
 
 import com.iostyle.wtfdaggerandroid.MainActivity;
+import com.iostyle.wtfdaggerandroid.MainFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -10,4 +11,7 @@ import dagger.android.ContributesAndroidInjector;
 abstract class BindModule {
     @ContributesAndroidInjector(modules = MainModule.class)
     abstract MainActivity mainActivity();  // 绑定MainActivity
+
+    @ContributesAndroidInjector(modules = MainFragmentModule.class)
+    abstract MainFragment mainFragment();
 }
