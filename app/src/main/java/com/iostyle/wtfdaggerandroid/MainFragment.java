@@ -15,6 +15,12 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
+/**
+ * 需要注入的Fragment 继承 DaggerFragment (注意包名)
+ * 需要添加到BindModule
+ * 不需要注入的保持原有继承 且不需要添加到BindModule
+ * @see com.iostyle.wtfdaggerandroid.dagger.BindModule
+ */
 public class MainFragment extends DaggerFragment implements ViewMainFragment {
     @Inject
     PresenterMainFragment mPresenter;
